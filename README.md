@@ -1,1 +1,1 @@
-# simple-devops-pipeline
+# simple-CI-CD-project-1
