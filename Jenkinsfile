@@ -5,6 +5,12 @@ pipeline {
     }
 
     stages {
+         stage('cd to terraform folder') {
+            steps {
+                sh 'cd terraform'
+            }
+        }
+
         stage('Terraform init') {
             steps {
                 sh 'terraform init'
