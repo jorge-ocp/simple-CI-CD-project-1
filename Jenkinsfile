@@ -5,9 +5,17 @@ pipeline {
     }
 
     stages {
-         stage('cd to terraform folder') {
+        stage('cd to terraform folder') {
+            steps {
+                sh 'cd terraform/'
+                
+            }
+        }
+
+        stage('ls') {
             steps {
                 sh 'ls -al'
+                
             }
         }
 
