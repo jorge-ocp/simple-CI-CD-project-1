@@ -7,7 +7,7 @@ pipeline {
     stages {
          stage('cd to terraform folder') {
             steps {
-                sh 'cd terraform'
+                sh 'ls -al'
             }
         }
 
