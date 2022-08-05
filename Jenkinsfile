@@ -5,28 +5,14 @@ pipeline {
     }
 
     stages {
-        stage('cd to terraform folder') {
-            steps {
-                sh 'cd terraform/'
-                
-            }
-        }
-
-        stage('ls') {
-            steps {
-                sh 'ls -al'
-                
-            }
-        }
-
         stage('Terraform init') {
             steps {
-                sh 'terraform init'
+                sh 'cd terraform && terraform init'
             }
         }
         stage('Terraform plan') {
             steps {
-                sh 'terraform plan --auto-approve'
+                sh 'cd terraform && terraform plan --auto-approve'
             }
         } 
     }
