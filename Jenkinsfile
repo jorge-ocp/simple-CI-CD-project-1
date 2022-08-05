@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Terraform plan') {
             steps {
-                sh 'cd terraform && terraform plan --auto-approve'
+                sh 'terraform plan --auto-approve'
             }
         } 
     }
