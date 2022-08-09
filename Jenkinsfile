@@ -15,13 +15,12 @@ pipeline {
                 withAWS(credentials: 'devops-credentials', region: 'us-west-2'){
                     sh 'cd terraform && terraform plan'
                 }
-            }
-
+            }       
+        }
         stage('Terraform apply') {
             steps {
                 sh 'cd terraform && terraform apply --auto-approve'
             }
-        }    
         } 
     }
 }
