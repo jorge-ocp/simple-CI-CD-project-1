@@ -8,8 +8,8 @@ pipeline {
             steps {
                 withAWS(credentials: 'devops-credentials', region: 'us-west-2'){
                     sh 'cd terraform && terraform init'
-                    sh 'terraform plan'
-                    sh 'terraform apply --auto-approve'
+                    sh 'cd terraform && terraform plan'
+                    sh 'cd terraform && terraform apply --auto-approve'
                 }
             }       
         }
