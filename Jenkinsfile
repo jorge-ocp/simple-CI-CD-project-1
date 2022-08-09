@@ -13,7 +13,7 @@ pipeline {
         stage('Terraform plan') {
             steps {
                 withAWS(credentials: 'devops-credentials', region: 'us-west-2'){
-                sh 'cd terraform && terraform plan'
+                    sh 'cd terraform && terraform plan'
                 }
             }
         } 
