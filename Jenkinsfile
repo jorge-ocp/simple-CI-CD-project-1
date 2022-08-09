@@ -3,17 +3,12 @@ pipeline {
     tools {
         terraform 'terraform-v117'
     }
-
     stages {
-        stage('Terraform init') {
-            steps {
-                sh 'cd terraform && terraform init'
-            }
-        }
-        stage('Terraform plan and apply') {
+        stage('Terraform stage') {
             steps {
                 withAWS(credentials: 'devops-credentials', region: 'us-west-2'){
-                    sh 'cd terraform && terraform plan'
+                    sh 'cd terraform && terraform init'
+                    sh 'terraform plan'
                     sh 'terraform apply --auto-approve'
                 }
             }       
