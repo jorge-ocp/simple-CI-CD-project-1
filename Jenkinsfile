@@ -10,10 +10,10 @@ pipeline {
                 sh 'cd terraform && terraform init --upgrade'
             }
         }
-        stage('Terraform plan and apply') {
+        stage('Terraform plan') {
             steps {
-                withAWS(credentials: 'devops-credentials', region: 'us-west-2'){
-                    sh 'cd terraform && terraform plan'
+                withAWS(credentials: 'devops-credentials', region: 'us-west-2') {
+                   sh 'cd terraform && terraform plan'
                    
                 }
             }       
