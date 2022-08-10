@@ -1,10 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "3.74.0"
+      source = "hashicorp/aws"
+      version = "4.25.0" #3.74.0
     }
   }
+}
+
+provider "aws" {
+  region = var.region
 }
 
 resource "aws_vpc" "my_vpc" {
