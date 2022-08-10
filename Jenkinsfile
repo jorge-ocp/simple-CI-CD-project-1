@@ -8,9 +8,8 @@ pipeline {
         }
         stage('Terraform plan') {
             steps {
-                withAWS(credentials: 'devops-credentials', region: 'us-west-2') {
-                   sh 'cd terraform && terraform plan'
-                   
+                withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+                    sh 'cd terraform && terraform plan'
                 }
             }       
         }
