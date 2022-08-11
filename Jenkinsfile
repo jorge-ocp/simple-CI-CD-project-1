@@ -18,6 +18,15 @@ pipeline {
                 }
                 
             }
-        }  
+        } 
+        stage('Terraform apply') {
+            steps {
+                withAWS(credentials: 'devops-credentials'){
+                    sh 'cd terraform && terraform apply --auto-approve
+
+                }
+                
+            }
+        } 
     }
 }
