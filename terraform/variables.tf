@@ -6,7 +6,7 @@ variable "region" {
 
 variable "ami" {
     type = string
-    default = "ami-0d70546e43a941d70"
+    default = "ami-02f3416038bdb17fb"
     description = "operating system for vms"
   
 }
