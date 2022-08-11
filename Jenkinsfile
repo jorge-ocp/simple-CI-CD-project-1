@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Terraform plan') {
             steps {
-                withAWS(credentials: 'devops-credentials-2'){
+                withAWS(credentials: 'devops-credentials'){
                     sh 'cd terraform && terraform plan'
 
                 }
