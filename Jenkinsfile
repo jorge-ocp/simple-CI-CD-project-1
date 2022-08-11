@@ -4,11 +4,16 @@ pipeline {
         stage('Terraform init') {
             steps {
                 sh 'cd terraform && terraform init --upgrade'
+                sh 'terraform -v'
             }
         }
         stage('Terraform plan') {
             steps {
-                sh 'cd terraform && terraform plan'
+                withAWS(credentials: 'devops-credentials-2'){
+                    sh 'cd terraform && terraform plan'
+
+                }
+                
             }
         }  
     }
